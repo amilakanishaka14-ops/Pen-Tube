@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Pen Tube</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">⚡ PEN TUBE</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="app.html">AI Engine</a></li>
+        <li><a href="dashboard.html">Creator Vault</a></li>
+        <li><a href="admin.html" class="active">Admin Panel</a></li>
+      </ul>
+      <div class="nav-auth">
+        <div id="authButtons">
+          <a href="auth.html" class="btn-nav btn-nav-primary">Sign In</a>
+        </div>
+        <div id="userInfo" style="display: none;"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Admin Container -->
+  <div class="admin-container">
+    <div class="app-header">
+      <h1 class="section-title">🛡️ Admin Dashboard</h1>
+      <p class="section-subtitle">Platform Overview & User Management</p>
+      <p style="color: var(--primary-cyan); font-weight: 600; margin-top: 1rem;">
+        Welcome, Amila Kanishka
+      </p>
+    </div>
+
+    <div id="adminStats">
+      <!-- Stats will be loaded here -->
+      <div style="text-align: center; padding: 4rem;">
+        <h3>Loading admin statistics...</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>⚡ Pen Tube</h3>
+        <p style="color: var(--text-secondary);">The ultimate AI-powered creator platform.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Pen Tube. Admin Dashboard.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import './firebase-config.js';
+    import './app.js';
+
+    // Load Admin Stats on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadAdminStats();
+    });
+  </script>
+</body>
+</html>
